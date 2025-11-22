@@ -24,12 +24,11 @@ Hệ thống quản lý phòng khách sạn (Hotel Management System) được p
 
 ### Tính năng chính:
 - 👥 **Quản lý khách hàng**: Thêm, sửa, xóa thông tin khách hàng
-- 🏨 **Quản lý loại phòng**: Quản lý các loại phòng với giá và sức chứa khác nhau
 - 🚪 **Quản lý phòng**: Theo dõi trạng thái phòng (trống, đã thuê, bảo trì)
 - 📅 **Quản lý đặt phòng**: Tạo, cập nhật và theo dõi các đơn đặt phòng
 - 📊 **Dashboard**: Thống kê tổng quan về tình hình hoạt động
 - 🔍 **Tìm kiếm**: Tìm kiếm nhanh trong tất cả các module
-- 💳 **Thanh toán**: Tính tiền dịch vụ, phòng và tạo hóa đơn thanh toán
+- 💳 **Thanh toán và trả phòng**: Tính tiền dịch vụ, phòng và tạo hóa đơn thanh toán
 - 🧾 **Lịch sử hóa đơn**: Lưu trữ, xem lại và quản lý các hóa đơn đã xuất
 ## 🔧 2. Các công nghệ được sử dụng
 <div align="center">
@@ -62,63 +61,48 @@ Hệ thống quản lý phòng khách sạn (Hotel Management System) được p
 
 
 ### 3.2. 📊 Dashboard (dashboard.png)  
-<img width="974" height="451" alt="image" src="https://github.com/user-attachments/assets/cc3c6fc6-ab63-4a61-959e-f7b0fc7da037" />
+![z7250166863812_5854a98db54335e2378c3bf98681d465](https://github.com/user-attachments/assets/c609da6a-a15c-4e86-aa0f-00187b8a3641)
 
 
 ### 3.3. 👥 Quản lý Khách hàng
 - Trang danh sách khách hàng
-<img width="974" height="451" alt="image" src="https://github.com/user-attachments/assets/e2a8de25-ebfb-4a5c-999e-19f6807da106" />
+![z7250167222175_51a7879eb618a7bea171e074940af286](https://github.com/user-attachments/assets/2e70ac64-bf04-47f5-8d3f-cdd60f619d8c)
+
 
 
 - Form thêm/sửa khách hàng mới
-<img width="974" height="451" alt="image" src="https://github.com/user-attachments/assets/194c902e-db27-4a7f-8fe0-ea189afbe8d2" />
+![z7250167361847_020ca02ba63cd1f87eedf40498662db4](https://github.com/user-attachments/assets/cd32f4df-f9ff-48ac-99d6-647a53a8206d)
 
 
-<img width="974" height="451" alt="image" src="https://github.com/user-attachments/assets/04ad5ad1-d683-418c-b8d5-05a2a9ebb534" />
-
-
-### 3.4. 🏨 Quản lý Loại phòng  
-- Trang danh sách loại phòng
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/14847be2-67e6-4857-a56a-b8d9a7c10ad7" />
-
-
-- Form thêm/sửa loại phòng
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/fa5464f0-6f93-4063-82d3-7674944ce7f3" />
-
-
-
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/98b0b028-aebe-4ff6-8a4a-cc209fc8d196" />
-
-
-### 3.5. 🚪 Quản lý Phòng
+### 3.4. 🚪 Quản lý Phòng
 - Trang danh sách phòng
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/f2c3242a-9000-424c-b407-76f95a36b459" />
-
-
+![z7250166933740_d62c8fad07b8c73a2d67751cfe703f87](https://github.com/user-attachments/assets/13fc7380-7a75-46a0-a5ff-4c855e19ec3d)
 
 - Form cập nhật trạng thái phòng
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/519b96ff-ac96-4818-98d9-cb5bd0f8ceb9" />
+![z7250166995422_bf6c924f3b12e4b6ec55f0aede4bc2f3](https://github.com/user-attachments/assets/1f7c5ef1-f065-4f6f-bd73-bfb83c5c5795)
 
 
-### 3.6. 📅 Quản lý Đặt phòng
-- Trang danh sách đặt phòng  
+### 3.5. 📅 Quản lý Đặt phòng
+- Trang danh sách đặt phòng
+![z7250167156141_2907dcbdd27ab26dc60cc3390a0c287e](https://github.com/user-attachments/assets/0b4074dc-1897-4f0c-8213-113d387a667a)
+
+  
 - Form tạo đặt phòng mới
 
-### 3.7. 🔍 Tính năng Tìm kiếm
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/98dde27e-5ded-4719-af27-b7235608106d" />
+![z7250167222176_f42ca7547d0ad3be781aa3ceca04e1b0](https://github.com/user-attachments/assets/8539fd46-d404-499a-acff-6ac2a91b2148)
+
+### 3.6. 🔍 Tính năng Tìm kiếm
+🧾 Lịch sử hóa đơn: Lưu trữ, xem lại và quản lý các hóa đơn đã xuất
 
 
+### 3.6. 💳 Thanh toán và trả phòng
+- Trang thanh toán và trả phòng
+  ![z7250167465030_4300a8a4a543380befd16e8f6307aad8](https://github.com/user-attachments/assets/40cf70dc-2b7a-4ad7-ab62-280d45730c1a)
 
-### 3.8. 🌙 Dark Mode
-- Giao diện sáng
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/c92c9ab5-3b32-4b6d-a588-cba6284b3efa" />
+- Form Thanh toán
+![z7250167596422_3aae2429ff3f426bf1b83fc9f0615004](https://github.com/user-attachments/assets/f1e06169-327e-4235-9737-61f5d62c3c07)
 
-
-
-- Giao diện tối  
-<img width="1910" height="885" alt="image" src="https://github.com/user-attachments/assets/b4a50add-d488-4f4e-a395-11c61b45a386" />
-
-
+  
 ## ⚙️ 4. Cài đặt và Sử dụng
 
 ### 4.1. Yêu cầu hệ thống
