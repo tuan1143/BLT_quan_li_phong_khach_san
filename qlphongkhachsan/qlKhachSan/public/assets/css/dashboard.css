@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg-1: #0f1724;
+    --bg-2: #1b2a41;
+    --accent-1: #caa969;
+    --accent-2: #f6e8c6;
+    --glass: rgba(255,255,255,0.06);
+    --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+    color: #e6eef8;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.04);
+    padding: 24px;
+    position: fixed; /* Thêm dòng này */
+    height: 100vh; /* Thêm dòng này */
+    overflow-y: auto; /* Cho phép cuộn nếu menu dài */
+}
+
+.hotel-brand {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.hotel-brand h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--accent-2);
+    margin-bottom: 8px;
+}
+
+.hotel-brand .subtitle {
+    font-size: 12px;
+    color: rgba(230,238,248,0.7);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #e6eef8;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+/* ================ VẠCH KẺ VÀNG KIM (TOÀN TRANG) ================ */
+/* Dán vào CUỐI file dashboard.css */
+/* ================ CSS HÀI HOÀ TRẠNG THÁI (CHO DASHBOARD) ================ */
+
+/* ----- 1. Nhuộm 5 Ô TÓM TẮT (stats-grid) ----- */
+/* Dùng viền (border) màu, nền trong suốt cho nó "sang" */
+.dashboard-stats .stat-card {
+    background-color: rgba(255, 255, 255, 0.03); /* Nền hơi sáng 1 chút */
+    border-bottom: 4px solid #6c757d; /* Xám, mặc định */
+}
+.dashboard-stats .stat-card h3 {
+    color: #eee;
+}
+.dashboard-stats .stat-trong { border-color: #28a745; } /* Xanh lá */
+.dashboard-stats .stat-dango  { border-color: #dc3545; } /* Đỏ */
+.dashboard-stats .stat-dadat  { border-color: #007bff; } /* Xanh dương */
+.dashboard-stats .stat-dondep { border-color: #fd7e14; } /* Cam */
+.dashboard-stats .stat-baotri { border-color: #6c757d; } /* Xám */
+
+
+/* ----- 2. Nhuộm bảng "ĐẶT PHÒNG GẦN ĐÂY" (recent bookings) ----- */
+/* (Công thức này giống file rooms.css, nhưng màu cho datphong) */
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Mới Đặt (Xanh dương) */
+.status-moidat {
+    background-color: rgba(0, 123, 255, 0.2);
+    color: #007bff;
+}
+
+/* Đã Nhận Phòng (Xanh lá) */
+.status-danhanphong {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+
+/* Đã Trả Phòng (Xám) */
+.status-datraphong {
+    background-color: rgba(108, 117, 125, 0.2);
+    color: #6c757d;
+}
+
+/* Đã Hủy (Đỏ) */
+.status-dahuy {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+/* ================ ÉP 5 Ô VỀ 1 HÀNG (DASHBOARD) ================ */
+/* Dán vào CUỐI file dashboard.css */
+
+.stats-grid.dashboard-stats {
+    display: grid;
+    
+    /* "Thần chú" đây: 
+       Chia 5 cột (5) với kích thước bằng nhau (1fr) 
+    */
+    grid-template-columns: repeat(5, 1fr);
+    
+    /* Giảm khoảng cách (gap) lại một chút cho đỡ chật
+       (Bạn có thể đang dùng 20px hoặc 25px) 
+    */
+    gap: 15px; 
+}
+.luxury-divider {
+  height: 1px; /* Chiều cao 1px (mảnh, tinh tế) */
+  border: 0;   /* Bỏ viền mặc định */
+
+  /* Tạo khoảng cách 24px với nội dung bên dưới */
+  margin: 0 0 24px 0; 
+
+  /* "Phép thuật" gradient vàng kim (giống màu tiêu đề #D4AF37) */
+  background-image: linear-gradient(
+      to right, 
+      rgba(212, 175, 55, 0.05), /* Mờ tịt (trong suốt) ở 2 bên */
+      #D4AF37,                 /* Vàng rực ở giữa */
+      rgba(212, 175, 55, 0.05)  /* Mờ tịt ở 2 bên */
+  );
+}
+.nav-item:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+.nav-item.active {
+    background: linear-gradient(90deg,var(--accent-1),#f3d89e 60%);
+    color: var(--bg-1);
+    font-weight: 600;
+}
+
+.nav-item .icon {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    margin-left: 280px; /* Thêm margin bằng width của sidebar */
+    padding: 24px;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent-2);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-info {
+    text-align: right;
+}
+
+.user-name {
+    display: block;
+    font-weight: 600;
+    color: var(--accent-2);
+}
+
+.user-role {
+    font-size: 12px;
+    color: rgba(230,238,248,0.7);
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    color: #e6eef8;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background: rgba(255,80,80,0.15);
+    color: #ffd6d6;
+}
+
+/* Stats grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: rgba(230,238,248,0.7);
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--accent-2);
+}
+
+/* Content card */
+.content-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+.content-card h2 {
+    font-size: 18px;
+    color: var(--accent-2);
+    margin-bottom: 20px;
+}
+
+/* Table */
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings-table th {
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+    color: rgba(230,238,248,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.bookings-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.status-badge.success {
+    background: rgba(39,174,96,0.15);
+    color: #a3f0c4;
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}/* ================ LOGO SIDEBAR (Bản sạch, không khung) ================ */
+/* ================ LOGO SIDEBAR (Có viền, không cắt ảnh) ================ */
+.sidebar-logo {
+    /* 1. Căn giữa (đã được căn bởi container cha .hotel-brand) */
+    margin-bottom: 15px;
+
+    /* 2. Kích thước và hiển thị ảnh */
+    width: auto;
+    max-width: 120px;       /* Nhỏ hơn trang login một chút */
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;    /* QUAN TRỌNG: Không cắt ảnh */
+
+    /* 3. Viền và trang trí */
+    border: 2px solid #E9C46A; /* Viền vàng kim */
+    padding: 4px;
+    border-radius: 6px;        /* Bo góc nhẹ */
+    
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(233, 196, 106, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột */
+.sidebar-logo:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(233, 196, 106, 0.4);
+}
+
+/* Đảm bảo container cha căn giữa nội dung */
+.hotel-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ... các thuộc tính khác giữ nguyên */
+}

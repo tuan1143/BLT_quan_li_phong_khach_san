@@ -1,0 +1,161 @@
+/* ================ FILE: public/assets/css/customers.css ================ */
+
+/* 1. "NHẬP KHẨU" STYLE GỐC TỪ rooms.css */
+@import url('rooms.css');
+
+/* 2. CHỈNH SỬA BẢNG KHÁCH HÀNG */
+.customers-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    color: #e6eef8;
+}
+
+.customers-table th,
+.customers-table td {
+    padding: 12px; /* Giảm padding chút cho gọn giống ảnh */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.customers-table th {
+    background-color: rgba(255, 255, 255, 0.03);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: rgba(233, 196, 106, 0.8);
+}
+
+/* 3. CHỈNH LẠI CỘT NÚT BẤM (ĐỒNG BỘ VỚI TRANG PHÒNG) */
+.table-actions {
+    display: flex;
+    flex-direction: row; /* Xếp ngang hàng */
+    justify-content: flex-start; /* Căn trái (hoặc center nếu muốn giữa) */
+    gap: 6px; /* Khoảng cách nhỏ giữa 2 nút */
+}
+
+/* Style chung cho nút */
+.table-actions .btn {
+    padding: 5px 10px; /* Kích thước gọn gàng */
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff; /* Chữ màu trắng */
+    transition: opacity 0.2s;
+}
+
+/* Hiệu ứng mờ nhẹ khi di chuột */
+.table-actions .btn:hover {
+    opacity: 0.9;
+}
+
+/* === NÚT SỬA (Màu Xám Đậm - Giống ảnh mẫu) === */
+.btn-edit {
+    background-color: #4a5157; /* Màu xám đậm */
+    border: 1px solid #4a5157;
+}
+
+/* === NÚT XÓA (Màu Đỏ - Giống ảnh mẫu) === */
+.btn-delete {
+    background-color: #dc3545; /* Màu đỏ chuẩn */
+    border: 1px solid #dc3545;
+}
+
+/* 4. ĐIỀU CHỈNH KÍCH THƯỚC CỘT */
+.customers-table th:nth-child(1) { width: 18%; } /* Họ tên */
+.customers-table th:nth-child(2) { width: 12%; } /* CMND */
+.customers-table th:nth-child(3) { width: 12%; } /* SĐT */
+.customers-table th:nth-child(4) { width: 20%; } /* Email */
+.customers-table th:nth-child(5) { width: 20%; } /* Địa chỉ */
+.customers-table th:nth-child(6) { width: 10%; } /* Quốc tịch */
+.customers-table th:nth-child(7) { width: 120px; } /* Cột thao tác đủ rộng cho 2 nút */
+
+/* ================ FIX LỖI Ô EMAIL (TYPE=EMAIL) BỊ TRẮNG ================ */
+
+/* 1. Ép ô Email dùng giao diện tối */
+.form-group input[type="email"] {
+    width: 100% !important;
+    padding: 10px !important;
+    border: 1px solid #5a6268 !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    
+    /* Nền tối và chữ trắng */
+    background-color: #212529 !important;
+    color: #fff !important; 
+}
+
+/* 2. Hiệu ứng Focus (Viền vàng khi bấm vào) */
+.form-group input[type="email"]:focus {
+    border-color: #E9C46A !important;
+    box-shadow: 0 0 5px rgba(233, 196, 106, 0.3) !important;
+    outline: none !important;
+}
+/* ================ THANH TÌM KIẾM (SEARCH BAR) ================ */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa tìm kiếm và nút thêm */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* Nền trong suốt */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px; /* Bo tròn 2 đầu */
+    padding: 4px 15px;
+    width: 300px; /* Chiều rộng thanh tìm kiếm */
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #E9C46A; /* Viền vàng khi bấm vào */
+    box-shadow: 0 0 10px rgba(233, 196, 106, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    flex: 1; /* Chiếm hết khoảng trống */
+    padding: 6px;
+    font-size: 13px;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-search {
+    background: none;
+    border: none;
+    color: #E9C46A;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: transform 0.2s;
+}
+
+.btn-search:hover {
+    transform: scale(1.2);
+}
+
+.btn-clear {
+    text-decoration: none;
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.btn-clear:hover { color: #ff4d4d; }

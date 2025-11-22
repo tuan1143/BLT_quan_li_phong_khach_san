@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap');
+
+:root{
+  --bg-1: #0f1724;
+  --bg-2: #1b2a41;
+  --accent-1: #caa969;
+  --accent-2: #f6e8c6;
+  --glass: rgba(255,255,255,0.06);
+  --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  --radius: 14px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(202,169,105,0.08), transparent 8%),
+              radial-gradient(1000px 500px at 90% 90%, rgba(246,232,198,0.06), transparent 8%),
+              linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color: #e6eef8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+
+.login-container{
+  width:100%;
+  max-width:480px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:var(--radius);
+  box-shadow: var(--card-shadow);
+  padding:34px;
+  backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.04);
+  position:relative;
+  overflow:hidden;
+}
+
+.login-container::before{
+  content:'';
+  position:absolute;
+  left:-30%;
+  top:-40%;
+  width:220%;
+  height:120%;
+  background: linear-gradient(120deg, rgba(202,169,105,0.06), rgba(246,232,198,0.02));
+  transform:rotate(12deg);
+  pointer-events:none;
+  mix-blend-mode:overlay;
+}
+
+.login-container h1{
+  margin: 0 0 12px 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--accent-2);
+  letter-spacing: 0.4px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-container h1 {
+    animation: fadeIn 0.8s ease-out;
+}
+/* ================ SUBTITLE LUXURY ================ */
+.hotel-brand .subtitle {
+    /* 1. Căn giữa */
+    text-align: center; 
+    display: block; /* Đảm bảo nó chiếm hết dòng để căn giữa được */
+    width: 100%;
+    
+    /* 2. Phông chữ Sang trọng */
+    font-family: 'Playfair Display', serif; /* Dùng font có chân giống tiêu đề */
+    font-size: 13px;       /* Kích thước vừa phải, tinh tế */
+    font-style: italic;    /* Chữ nghiêng nghệ thuật */
+    
+    /* 3. Hiệu ứng cao cấp */
+    letter-spacing: 3px;   /* Kéo giãn khoảng cách chữ (Bí quyết của sự sang trọng) */
+    text-transform: uppercase; /* Chữ in hoa toàn bộ */
+    
+    /* 4. Màu sắc */
+    color: rgba(233, 196, 106, 0.8); /* Màu vàng kim hơi mờ nhẹ */
+    margin-top: 8px;       /* Cách tiêu đề một chút */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Bóng đổ nhẹ giúp chữ nổi lên nền tối */
+}
+.login-container p.subtitle{
+  margin:0 0 18px 0;
+  color: rgba(230,238,248,0.7);
+  font-size:13px;
+}
+
+.login-container form{display:flex;flex-direction:column;gap:12px}
+.login-container label{
+  font-size:12px;
+  color:rgba(230,238,248,0.75);
+  margin-bottom:6px;
+  display:block;
+}
+.input-wrap{display:flex;flex-direction:column}
+input[type="text"], input[type="password"]{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
+  color: #f3f7fb;
+  outline:none;
+  font-size:14px;
+}
+input:focus{
+  box-shadow: 0 6px 18px rgba(202,169,105,0.12);
+  border-color: rgba(202,169,105,0.5);
+}
+
+.error-message{
+  background: rgba(255,80,80,0.08);
+  color:#ffd6d6;
+  padding:10px 12px;
+  border-radius:8px;
+  font-size:13px;
+  border:1px solid rgba(255,80,80,0.12);
+}
+
+button[type="submit"]{
+  margin-top:6px;
+  padding:12px 14px;
+  border-radius:12px;
+  border: none;
+  cursor:pointer;
+  font-weight:600;
+  color: #0f1724;
+  background: linear-gradient(90deg,var(--accent-1),#f3d89e 60%);
+  box-shadow: 0 8px 22px rgba(202,169,105,0.14), inset 0 -2px 6px rgba(0,0,0,0.06);
+}
+button[type="submit"]:hover{ transform: translateY(-2px); box-shadow: 0 12px 30px rgba(202,169,105,0.18); }
+
+.login-actions{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:13px;color:rgba(230,238,248,0.75)}
+.login-actions a{color:var(--accent-2); text-decoration:none; opacity:0.9}
+.login-actions a:hover{opacity:1; text-decoration:underline}
+
+@media (max-width:520px){
+  .login-container{padding:20px; border-radius:12px}
+  .login-container h1{font-size:22px}
+}
+
+/* ================ LOGO TRANG LOGIN (Bản sạch, không khung) ================ */
+ /* ================ LOGO TRANG LOGIN (Có viền, không cắt ảnh) ================ */
+.login-logo {
+    /* 1. Căn giữa */
+    display: block;
+    margin: 0 auto 15px auto; /* Trên 0, Phải auto, Dưới 15px, Trái auto */
+
+    /* 2. Kích thước và hiển thị ảnh */
+    width: auto;            /* Chiều rộng tự động */
+    max-width: 150px;       /* Giới hạn chiều rộng tối đa */
+    height: auto;           /* Chiều cao tự động theo tỷ lệ */
+    max-height: 100px;      /* Giới hạn chiều cao tối đa */
+    object-fit: contain;    /* QUAN TRỌNG: Đảm bảo ảnh hiển thị nguyên vẹn, không bị cắt */
+
+    /* 3. Viền và trang trí */
+    border: 2px solid var(--accent-1); /* Viền vàng kim */
+    padding: 5px;                      /* Khoảng cách giữa ảnh và viền */
+    border-radius: 8px;                /* Bo góc nhẹ nhàng (hình chữ nhật) */
+    
+    /* Tùy chọn: Thêm nền mờ nhẹ để logo nổi bật hơn */
+    background-color: rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 0 20px rgba(202, 169, 105, 0.2); /* Phát sáng nhẹ */
+
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hiệu ứng khi di chuột */
+.login-logo:hover {
+    transform: scale(1.03); /* Phóng to nhẹ */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(202, 169, 105, 0.4); /* Sáng hơn khi hover */
+}

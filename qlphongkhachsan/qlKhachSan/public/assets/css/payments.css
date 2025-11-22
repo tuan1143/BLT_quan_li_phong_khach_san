@@ -1,0 +1,339 @@
+/* ================ FILE: public/assets/css/payments.css ================ */
+
+/* 1. Kế thừa style gốc từ rooms.css (Modal, Button, Card...) */
+@import url('rooms.css');
+
+/* 2. CHỈNH SỬA BẢNG THANH TOÁN (Fix lỗi vỡ giao diện trong ảnh) */
+.payments-table {
+    width: 100%;
+    border-collapse: collapse; /* Gộp đường viền lại cho gọn */
+    margin-top: 15px;
+    color: #e6eef8; /* Màu chữ sáng */
+}
+
+.payments-table th,
+.payments-table td {
+    padding: 16px; /* Tăng khoảng cách cho thoáng */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Đường kẻ mờ tinh tế */
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Header của bảng */
+.payments-table th {
+    background-color: rgba(255, 255, 255, 0.03);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: rgba(233, 196, 106, 0.8); /* Màu vàng kim nhạt */
+    letter-spacing: 0.5px;
+}
+
+/* Dòng thông báo "Không có phòng nào..." */
+.payments-table td[colspan="5"] {
+    text-align: center;
+    padding: 40px 0;
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+}
+
+/* Hiệu ứng khi di chuột vào dòng */
+.payments-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* 3. CÁC THÀNH PHẦN TRANG TRÍ KHÁC */
+
+/* Badge tên phòng (Màu vàng nổi bật) */
+.room-badge {
+    background: linear-gradient(45deg, #D4AF37, #E9C46A);
+    color: #1b2a41; /* Chữ tối trên nền vàng */
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(233, 196, 106, 0.2);
+    display: inline-block;
+}
+
+/* Nút Thanh toán (Màu xanh chủ đạo hoặc Vàng) */
+.btn-checkout {
+    background: transparent;
+    border: 1px solid #E9C46A;
+    color: #E9C46A;
+    padding: 6px 16px;
+    border-radius: 20px; /* Bo tròn kiểu nút chức năng */
+    transition: all 0.3s ease;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-checkout:hover {
+    background: #E9C46A;
+    color: #1b2a41;
+    box-shadow: 0 0 15px rgba(233, 196, 106, 0.4);
+    transform: translateY(-2px);
+}
+
+/* --- PHẦN STYLE CHO MODAL HÓA ĐƠN (Giữ nguyên từ trước) --- */
+.modal-lg {
+    max-width: 700px !important;
+    width: 95% !important;
+}
+.invoice-title {
+    text-align: center;
+    color: #E9C46A !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px !important;
+}
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 15px;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+}
+.luxury-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E9C46A, transparent);
+    margin: 20px 0;
+    opacity: 0.5;
+}
+
+/* Section con trong hóa đơn */
+.invoice-section {
+    margin-bottom: 20px;
+}
+.invoice-section h4 {
+    font-size: 13px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 5px;
+}
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.money-highlight {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Bảng dịch vụ trong Modal */
+.service-table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.service-table th { text-align: left; font-size: 12px; color: #666; padding-bottom: 5px;}
+.service-table td { padding: 5px 0; }
+
+/* Ô nhập trong bảng dịch vụ */
+.service-input {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #444;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+}
+.service-input:focus { border-color: #E9C46A; outline: none; }
+
+/* Tổng kết tiền */
+.invoice-summary {
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255,255,255,0.2);
+}
+.summary-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.grand-total {
+    font-size: 1.6em;
+    color: #E9C46A;
+    font-weight: 700;
+    margin-top: 15px;
+    text-shadow: 0 0 10px rgba(233, 196, 106, 0.3);
+}
+
+/* Nút thêm dịch vụ nhỏ */
+.btn-small {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.btn-small:hover { background: rgba(255,255,255,0.2); color: #fff; }
+/* ================ PAYMENT METHOD STYLES ================ */
+.payment-methods {
+    display: flex;
+    gap: 10px;
+}
+
+.method-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 13px;
+    color: #ccc;
+    background: rgba(255,255,255,0.02);
+}
+
+.method-option:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* Trạng thái được chọn */
+.method-option.active {
+    border-color: #E9C46A;
+    background: rgba(233, 196, 106, 0.1);
+    color: #E9C46A;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(233, 196, 106, 0.2);
+}
+/* ... Giữ lại phần import và table cũ ... */
+
+/* --- LAYOUT MODAL MỚI --- */
+.payment-container {
+    display: flex;
+    gap: 20px;
+    color: #e6eef8;
+}
+
+/* Cột Trái: Hóa đơn */
+.bill-section {
+    flex: 1.4; /* Chiếm 60% */
+    padding-right: 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Cột Phải: Thanh toán */
+.payment-method-section {
+    flex: 1; /* Chiếm 40% */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Các thành phần con */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.highlight-text { color: #E9C46A; font-size: 1.1em; }
+.divider { border: 0; border-bottom: 1px dashed rgba(255,255,255,0.2); margin: 15px 0; }
+
+.section-box {
+    background: rgba(0,0,0,0.2);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.section-box h4 {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.flex-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
+.math-row { margin-top: 8px; font-weight: 500; }
+.money { color: #fff; font-weight: bold; }
+.minus-money { color: #ff6b6b; }
+
+/* Dịch vụ */
+.btn-add-service {
+    background: none; border: 1px solid #555; color: #ccc;
+    font-size: 11px; padding: 2px 8px; border-radius: 4px; cursor: pointer;
+}
+.service-item {
+    display: flex; gap: 5px; margin-bottom: 5px;
+}
+.srv-input {
+    background: rgba(255,255,255,0.05); border: 1px solid #444;
+    color: #fff; padding: 5px; border-radius: 4px; font-size: 13px;
+}
+.srv-name { flex: 2; }
+.srv-price { flex: 1; text-align: right; }
+.btn-del-srv { background: none; border: none; color: #ff6b6b; cursor: pointer; font-weight: bold; }
+
+/* Tổng kết */
+.bill-summary { text-align: right; margin-top: 10px; }
+.sum-row { display: flex; justify-content: flex-end; gap: 20px; margin-bottom: 5px; }
+.grand-total { font-size: 1.4em; color: #E9C46A; font-weight: 700; margin-top: 10px; border-top: 1px solid #444; padding-top: 10px; }
+
+/* PHƯƠNG THỨC THANH TOÁN (TABS) */
+.method-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.method-tab {
+    flex: 1; text-align: center; padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid transparent; border-radius: 6px;
+    cursor: pointer; transition: all 0.2s; font-size: 13px;
+}
+.method-tab:hover { background: rgba(255,255,255,0.1); }
+.method-tab.active {
+    background: rgba(233, 196, 106, 0.15);
+    border-color: #E9C46A; color: #E9C46A; font-weight: bold;
+}
+
+/* Vùng hiển thị phương thức */
+.method-content { flex: 1; display: flex; align-items: center; justify-content: center; }
+.method-area { text-align: center; width: 100%; }
+.cash-icon { font-size: 40px; margin-bottom: 10px; }
+.qr-box { background: #fff; padding: 10px; border-radius: 8px; display: inline-block; }
+.qr-box img { display: block; max-width: 100%; height: auto; }
+.qr-hint { font-size: 12px; color: #E9C46A; margin-top: 10px; }
+
+/* Nút hành động */
+.action-buttons { display: flex; gap: 10px; margin-top: 20px; }
+.btn-cancel { flex: 1; background: #444; color: #fff; border: none; }
+.btn-confirm { flex: 2; background: #E9C46A; color: #1b2a41; font-weight: bold; border: none; }
+/* ================ CUSTOM CONFIRM MODAL ================ */
+/* Icon dấu hỏi chấm tròn */
+.confirm-icon {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    border: 3px solid #E9C46A;
+    color: #E9C46A;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 auto;
+    animation: pulse 2s infinite;
+}
+
+/* Hiệu ứng nhịp tim cho icon */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(233, 196, 106, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(233, 196, 106, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(233, 196, 106, 0); }
+}
+
+/* Chỉnh lại modal overlay để đè lên trên modal thanh toán cũ */
+#confirmModal {
+    backdrop-filter: blur(5px); /* Làm mờ nền đằng sau */
+    background-color: rgba(0, 0, 0, 0.8);
+}

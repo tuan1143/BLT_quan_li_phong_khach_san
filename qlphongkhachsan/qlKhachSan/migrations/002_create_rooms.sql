@@ -1,0 +1,9 @@
+CREATE TABLE rooms (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    room_number VARCHAR(10) NOT NULL UNIQUE,
+    room_type VARCHAR(50) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    status ENUM('available', 'booked') DEFAULT 'available',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

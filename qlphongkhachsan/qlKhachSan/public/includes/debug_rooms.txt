@@ -1,0 +1,96 @@
+Thời gian: 2025-11-21 08:10:42
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 2
+    [action] => update
+    [ten_phong] => 102
+    [id_loaiphong] => 1
+    [gia_phong] => 10000
+    [trang_thai] => Trong
+    [ghi_chu] => Gần cửa sổ
+)
+
+Thời gian: 2025-11-21 08:14:09
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 7
+    [action] => update
+    [ten_phong] => 105
+    [id_loaiphong] => 2
+    [gia_phong] => 2000
+    [trang_thai] => Trong
+    [ghi_chu] => test1
+)
+
+Thời gian: 2025-11-21 08:14:17
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 4
+    [action] => update
+    [ten_phong] => 301
+    [id_loaiphong] => 3
+    [gia_phong] => 3000
+    [trang_thai] => Trong
+    [ghi_chu] => Suite góc
+)
+
+Thời gian: 2025-11-21 08:14:53
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 5
+    [action] => update
+    [ten_phong] => 309
+    [id_loaiphong] => 1
+    [gia_phong] => 6000
+    [trang_thai] => DangDonDep
+    [ghi_chu] => tầng 3
+)
+
+Thời gian: 2025-11-21 08:17:44
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 6
+    [action] => update
+    [ten_phong] => 401
+    [id_loaiphong] => 3
+    [gia_phong] => 1000
+    [trang_thai] => Trong
+    [ghi_chu] => test
+)
+
+Thời gian: 2025-11-21 08:18:36
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 8
+    [action] => update
+    [ten_phong] => 403
+    [id_loaiphong] => 3
+    [gia_phong] => 13000
+    [trang_thai] => Trong
+    [ghi_chu] => test2
+)
+
+Thời gian: 2025-11-21 08:18:47
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 6
+    [action] => update
+    [ten_phong] => 401
+    [id_loaiphong] => 3
+    [gia_phong] => 2000
+    [trang_thai] => Trong
+    [ghi_chu] => test
+)
+
+Thời gian: 2025-11-21 15:17:29
+Dữ liệu nhận được (POST): Array
+(
+    [id_phong] => 7
+    [action] => update
+    [ten_phong] => 105
+    [id_loaiphong] => 2
+    [gia_phong] => 2000.00
+    [trang_thai] => Trong
+    [ghi_chu] => test1
+)
+

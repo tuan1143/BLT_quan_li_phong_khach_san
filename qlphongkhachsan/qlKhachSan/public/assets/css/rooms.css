@@ -1,0 +1,644 @@
+/* File: public/assets/css/rooms.css */
+
+/* Header của trang */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Nút bấm chung */
+
+/* --- TOAST NOTIFICATION (GÓC DƯỚI PHẢI) --- */
+.alert-container {
+    position: fixed;        /* Cố định vị trí so với màn hình */
+    bottom: 30px;          /* Cách đáy 30px */
+    right: 30px;           /* Cách phải 30px */
+    z-index: 9999;         /* Nổi lên trên cùng */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;             /* Khoảng cách giữa các thông báo nếu có nhiều */
+    max-width: 320px;      /* Giới hạn chiều rộng cho nhỏ gọn */
+    width: auto;
+    pointer-events: none;  /* Để bấm xuyên qua vùng trống */
+}
+
+.custom-alert {
+    pointer-events: auto;  /* Cho phép bấm vào nút đóng */
+    padding: 10px 16px;    /* [NHỎ HƠN] Padding gọn lại */
+    border-radius: 6px;    /* Bo góc nhẹ */
+    font-size: 13px;       /* [NHỎ HƠN] Chữ nhỏ tinh tế */
+    font-weight: 500;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Đổ bóng sâu hơn vì đang nổi */
+    backdrop-filter: blur(5px); /* Hiệu ứng mờ nền kính */
+    
+    animation: slideInRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy nhẹ */
+}
+
+/* Màu sắc giữ nguyên phong cách Neon tối */
+.alert-success {
+    background: rgba(15, 50, 20, 0.9); /* Nền tối đậm hơn chút cho dễ đọc */
+    border-left: 4px solid #28a745;
+    color: #4cd137; 
+}
+
+.alert-error {
+    background: rgba(60, 10, 15, 0.9);
+    border-left: 4px solid #dc3545;
+    color: #ff6b6b;
+}
+
+/* Hiệu ứng trượt từ phải sang */
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Hiệu ứng biến mất */
+@keyframes fadeOut {
+    to { opacity: 0; transform: translateY(10px); }
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 16px;
+    margin-left: 12px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.alert-close:hover { opacity: 1; }
+
+
+/* ================ FIX LỖI Ô NHẬP SỐ (GIÁ PHÒNG) ================ */
+
+/* 1. Áp dụng style tối cho ô nhập số */
+.form-group input[type="number"] {
+    width: 100% !important;
+    padding: 10px !important;
+    border: 1px solid #5a6268 !important; 
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    
+    /* Nền tối và chữ trắng */
+    background-color: #212529 !important;
+    color: #fff !important; 
+}
+
+/* 2. Hiệu ứng khi bấm vào (Focus) - Viền vàng */
+.form-group input[type="number"]:focus {
+    border-color: #E9C46A !important; 
+    box-shadow: 0 0 5px rgba(233, 196, 106, 0.3) !important; 
+    outline: none !important;
+}
+
+/* 3. (Tùy chọn) Ẩn nút mũi tên tăng/giảm nhỏ bên phải ô số cho đẹp */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+/* Bảng dữ liệu */
+/* ================ BỔ SUNG ĐOẠN NÀY VÀO CUỐI FILE rooms.css ================ */
+
+/* 1. Style CƠ BẢN cho nút (áp dụng cho nút "Sửa") */
+.btn {
+    padding: 6px 12px;
+    border: 1px solid #5a6268; /* Viền xám tối */
+    background-color: #4a5157; /* Nền xám đậm */
+    color: #f0f0f0;            /* Chữ xám trắng */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    text-decoration: none; /* Bỏ gạch chân nếu là thẻ <a> */
+    display: inline-block; /* Đảm bảo nút hiển thị đúng */
+}
+
+/* Hiệu ứng khi lướt chuột */
+.btn:hover {
+    background-color: #5a6268; /* Hơi sáng lên */
+    border-color: #777;
+    color: #fff;
+}
+
+/* 2. Style cho nút CHÍNH (nút "Thêm phòng mới") */
+/* ================ NÂNG CẤP NÚT "THÊM PHÒNG MỚI" (VÀNG KIM) ================ */
+
+.btn-primary {
+    /* "Nhuộm" nó bằng màu vàng cát chúng ta vừa dùng */
+    background-color: #E9C46A;
+    border-color: #E9C46A;
+    
+    /* Chữ màu đen/xanh đậm sẽ nổi trên nền vàng */
+    color: #212529; 
+    
+    /* Thêm chút bóng đổ cho nút "nổi" lên */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* ================ PHIÊN BẢN BÚA TẠ (DARK MODE MODAL) ================ */
+/* Dán vào rooms.css, thay thế code modal cũ */
+
+.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 1000 !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.modal-overlay[aria-hidden="false"] {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.modal-content {
+    /* Ép nó phải dùng nền này */
+    background-color: #2c303a !important; 
+    padding: 30px !important;
+    border-radius: 8px !important;
+    width: 90% !important;
+    max-width: 500px !important;
+    border: 1px solid #D4AF37 !important;
+    box-shadow: 0 5px 25px rgba(212, 175, 55, 0.1) !important; 
+}
+
+/* Tiêu đề (Thêm phòng mới) */
+.modal-content h2 {
+    margin-top: 0 !important;
+    margin-bottom: 25px !important;
+    border-bottom: 1px solid #4a5157 !important; 
+    padding-bottom: 15px !important;
+    
+    /* Ép nó phải dùng màu này */
+    color: #E9C46A !important; 
+    text-shadow: 0 0 5px rgba(233, 196, 106, 0.4) !important;
+}
+
+/* Chữ (Tên phòng, Loại phòng...) */
+.form-group label {
+    display: block !important;
+    margin-bottom: 6px !important;
+    font-weight: 600 !important;
+    
+    /* Ép nó phải dùng màu này */
+    color: #ccc !important; 
+}
+
+/* Các ô input, select, textarea */
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100% !important;
+    padding: 10px !important;
+    border: 1px solid #5a6268 !important; 
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    
+    /* Ép nó phải dùng nền này */
+    background-color: #212529 !important;
+    color: #fff !important; /* Chữ gõ vào màu trắng */
+}
+
+/* Khi bấm vào ô input (focus) */
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #E9C46A !important; 
+    box-shadow: 0 0 5px rgba(233, 196, 106, 0.3) !important; 
+    outline: none !important;
+}
+
+.modal-actions {
+    margin-top: 25px !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+}
+
+/* Nút bấm đã "ngoan" rồi, không cần !important */
+/* Khi lướt chuột vào, cho nó "đậm" hơn một chút */
+.btn-primary:hover {
+    background-color: #D4AF37; /* Dùng lại màu vàng "cũ" */
+    border-color: #D4AF37;
+    color: #212529;
+}
+
+/* 3. Style cho nút NGUY HIỂM (nút "Xóa") */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+/* ================ BỔ SUNG CSS CHO BẢNG (TABLE) ================ */
+
+/* 1. Bảng chính - làm nó "vô hình" với nền */
+.rooms-table {
+    width: 100%;
+    border-collapse: collapse; /* Gộp viền lại */
+    margin-top: 15px;
+    background-color: transparent; /* Nền trong suốt để thấy nền xanh */
+    box-shadow: none; /* Bỏ cái bóng đổ của theme sáng */
+    color: #f0f0f0; /* Chữ màu xám trắng */
+}
+
+/* 2. Các ô (cả header và cell) */
+.rooms-table th,
+.rooms-table td {
+    border: 1px solid #4a5157; /* Viền xám tối, GIỐNG viền nút cho nó "tone-sur-tone" */
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* 3. Header (th) - làm nó nổi bật một chút */
+.rooms-table th {
+    /* Dùng một màu nền hơi sáng hơn nền chính một chút */
+    background-color: rgba(255, 255, 255, 0.05); 
+    font-weight: 700;
+    color: #fff; /* Chữ header màu trắng */
+}
+
+/* 4. (Tùy chọn) Thêm "vằn" cho dễ đọc (mỗi hàng chẵn có nền khác) */
+.rooms-table tbody tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.1); /* Hơi tối hơn một chút */
+}
+/* 4. Căn chỉnh 2 nút Sửa/Xóa (đoạn này có thể bạn đã có) */
+.room-actions {
+    display: flex;
+    gap: 8px; /* Tạo khoảng cách giữa 2 nút */
+}
+
+.room-actions {
+    display: flex;
+    gap: 8px; /* Khoảng cách giữa 2 nút Sửa/Xóa */
+}
+
+/* Modal (Pop-up) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden; /* Ẩn đi */
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+.page-header h2 {
+    /* Vàng sáng hơn, "tươi" hơn một chút */
+    color: #E9C46A; 
+    
+    /* Tăng hào quang, giảm bóng đổ (cho nó tự phát sáng) */
+    text-shadow: 0 0 8px rgba(233, 196, 106, 0.5);
+        
+    font-size: 26px; 
+    margin: 0; 
+}
+/* Trạng thái [aria-hidden="false"] là khi modal được MỞ */
+.modal-overlay[aria-hidden="false"] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Form trong Modal */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Quan trọng */
+    font-size: 14px;
+}
+
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+/* ================ THANH PHÂN TRANG (PAGINATION) ================ */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.pagination-info {
+    color: #aaa;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+    color: #e6eef8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.page-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Trang hiện tại */
+.page-link.active {
+    background: #E9C46A;
+    color: #1b2a41;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(233, 196, 106, 0.3);
+}
+
+/* Nút bị vô hiệu (Disabled) */
+.page-link.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+/* Nút Xem Chi Tiết (Màu Xanh Dương) */
+.btn-view {
+    background: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.btn-view:hover {
+    background: #007bff;
+    color: white;
+}
+
+.btn-quick-status:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+/* ================ CẬP NHẬT GIAO DIỆN LUXURY ================ */
+
+/* --- 1. NÚT BẤM (ACTIONS) --- */
+
+/* Style chung cho các nút tác vụ */
+.room-actions .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent; /* Nền trong suốt sang trọng */
+    white-space: nowrap;
+}
+
+/* Nút CHI TIẾT - Màu Vàng Kim (Luxury) */
+.btn-view {
+    border: 1px solid #E9C46A;
+    color: #E9C46A;
+    margin-right: 8px; /* Khoảng cách với nút xóa */
+}
+
+.btn-view:hover {
+    background-color: #E9C46A;
+    color: #1b2a41; /* Chữ chuyển màu tối khi hover */
+    box-shadow: 0 0 10px rgba(233, 196, 106, 0.3); /* Hiệu ứng phát sáng nhẹ */
+}
+
+/* Nút XÓA - Màu Đỏ Đặc (Solid Red) - Giống hệt trang Đặt phòng */
+.btn-delete {
+    background-color: #dc3545 !important; /* Nền đỏ đậm */
+    border: 1px solid #dc3545 !important; /* Viền đỏ */
+    color: #ffffff !important;            /* Chữ trắng */
+    opacity: 0.9;
+}
+
+.btn-delete:hover {
+    background-color: #c82333 !important; /* Đỏ tối hơn khi di chuột */
+    border-color: #bd2130 !important;
+    color: #ffffff !important;
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(220, 53, 69, 0.5) !important; /* Phát sáng nhẹ */
+}
+
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Tự xuống dòng nếu màn hình nhỏ */
+}
+
+/* ================ CẬP NHẬT NÚT EXCEL (LUXURY STYLE) ================ */
+
+.btn-excel {
+    /* Nền trong suốt để hòa vào giao diện tối */
+    background-color: rgba(255, 255, 255, 0.05); 
+    
+    /* Viền màu xanh lá nhẹ nhàng (để vẫn nhận diện là Excel) */
+    border: 1px solid #2ecc71; 
+    
+    /* Chữ màu xanh lá sáng */
+    color: #2ecc71; 
+    
+    padding: 8px 16px;
+    border-radius: 6px; /* Bo góc mềm mại hơn */
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Khoảng cách giữa icon và chữ */
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.btn-excel:hover {
+    background-color: #2ecc71; /* Nền chuyển thành xanh */
+    color: #1b2a41; /* Chữ chuyển thành màu tối */
+    box-shadow: 0 0 12px rgba(46, 204, 113, 0.4); /* Phát sáng nhẹ */
+    transform: translateY(-2px);
+}
+
+/* Chỉnh lại bố cục nhóm nút trên header cho gọn */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa nút Excel và nút Thêm */
+}
+.filter-item {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #aaa; /* Màu chữ mặc định */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.filter-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Trạng thái đang được chọn (Active) */
+.filter-item.active {
+    background: rgba(233, 196, 106, 0.15); /* Nền vàng nhạt */
+    color: #E9C46A; /* Chữ vàng kim */
+    border-color: #E9C46A;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(233, 196, 106, 0.2); /* Phát sáng nhẹ */
+}
+/* --- 2. TRẠNG THÁI PHÒNG (BADGES) --- */
+
+/* Style chung cho badge trạng thái */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px; /* Bo tròn mềm mại */
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    /* Tạo hiệu ứng kính (glassmorphism) nhẹ */
+    backdrop-filter: blur(4px); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Trạng thái: TRỐNG (Màu Xanh Ngọc sang trọng) */
+.status-trong {
+    background-color: rgba(46, 204, 113, 0.15); /* Nền trong suốt */
+    color: #2ecc71; /* Chữ sáng */
+    border: 1px solid rgba(46, 204, 113, 0.3); /* Viền nhẹ */
+}
+
+/* Trạng thái: ĐANG Ở (Màu Đỏ Đô trầm) */
+.status-dango {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+/* Trạng thái: ĐÃ ĐẶT (Màu Vàng Kim - Đồng bộ với theme) */
+.status-dadat {
+    background-color: rgba(233, 196, 106, 0.15);
+    color: #E9C46A;
+    border: 1px solid rgba(233, 196, 106, 0.3);
+}
+
+/* Trạng thái: DỌN DẸP (Màu Xanh Dương nhạt tinh tế) */
+.status-dondep {
+    background-color: rgba(52, 152, 219, 0.15);
+    color: #3498db;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+/* Trạng thái: BẢO TRÌ (Màu Xám Bạc công nghiệp) */
+.status-baotri {
+    background-color: rgba(149, 165, 166, 0.15);
+    color: #95a5a6;
+    border: 1px solid rgba(149, 165, 166, 0.3);
+}
+
+/* Style cho nút đổi trạng thái nhanh (btn-quick-status) */
+.btn-quick-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s ease;
+}
+.btn-quick-status:hover {
+    transform: translateY(-2px); /* Nhảy nhẹ khi di chuột */
+    cursor: pointer;
+}
+.btn-quick-status small {
+    opacity: 0.7;
+    font-style: italic;
+}

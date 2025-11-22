@@ -1,0 +1,138 @@
+@import url('rooms.css');
+
+/* Tinh chỉnh bảng hóa đơn */
+.invoices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.invoices-table th, 
+.invoices-table td {
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #e6eef8;
+}
+
+.invoices-table th {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: rgba(230,238,248,0.6);
+    font-weight: 600;
+}
+
+/* Mã hóa đơn */
+.invoice-id {
+    font-family: monospace;
+    color: #E9C46A;
+    background: rgba(233, 196, 106, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Tag tên phòng */
+.room-tag {
+    background: #2c3e50;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Tổng tiền nổi bật */
+.money-total {
+    color: #E9C46A;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.text-right {
+    text-align: right;
+}
+/* ... Code cũ ... */
+
+/* Nút Xem Chi Tiết */
+.btn-view-detail {
+    background: transparent;
+    border: 1px solid #E9C46A;
+    color: #E9C46A;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+.btn-view-detail:hover {
+    background: #E9C46A;
+    color: #1b2a41;
+}
+
+/* Modal Chi Tiết Hóa Đơn */
+.invoice-details {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.grand-total-row {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 1.2em;
+    color: #E9C46A;
+    font-weight: bold;
+}
+
+/* Dùng lại style của search box từ customers.css */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 4px 15px;
+    width: 280px;
+}
+.search-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    flex: 1;
+    outline: none;
+}
+.btn-search {
+    background: none;
+    border: none;
+    color: #E9C46A;
+    cursor: pointer;
+}
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+/* ================ CĂN GIỮA BẢNG (TRỪ CỘT TIỀN) ================ */
+
+/* 1. Căn giữa toàn bộ tiêu đề và nội dung các ô */
+.invoices-table th,
+.invoices-table td {
+    text-align: center !important; /* Ép buộc căn giữa */
+    vertical-align: middle !important; /* Căn giữa theo chiều dọc */
+}
+
+/* 2. Riêng cột "Tổng tiền" (Cột thứ 4) thì căn phải */
+.invoices-table th:nth-child(4),
+.invoices-table td:nth-child(4) {
+    text-align: right !important;
+    padding-right: 20px !important; /* Thêm khoảng cách lề phải cho đẹp */
+}
+
+/* 3. Tinh chỉnh lại cột Khách hàng một chút cho gọn (nếu tên dài) */
+.invoices-table td:nth-child(3) {
+    max-width: 200px;
+}
