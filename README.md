@@ -29,8 +29,8 @@ Hệ thống quản lý phòng khách sạn (Hotel Management System) được p
 - 📅 **Quản lý đặt phòng**: Tạo, cập nhật và theo dõi các đơn đặt phòng
 - 📊 **Dashboard**: Thống kê tổng quan về tình hình hoạt động
 - 🔍 **Tìm kiếm**: Tìm kiếm nhanh trong tất cả các module
-- 💳 **Thanh toán: Tính tiền dịch vụ, phòng và tạo hóa đơn thanh toán
-- 🧾 **Lịch sử hóa đơn: Lưu trữ, xem lại và quản lý các hóa đơn đã xuất
+- 💳 **Thanh toán**: Tính tiền dịch vụ, phòng và tạo hóa đơn thanh toán
+- 🧾 **Lịch sử hóa đơn**: Lưu trữ, xem lại và quản lý các hóa đơn đã xuất
 ## 🔧 2. Các công nghệ được sử dụng
 <div align="center">
 
@@ -57,7 +57,8 @@ Hệ thống quản lý phòng khách sạn (Hotel Management System) được p
 
 ## 3. Hình ảnh các chức năng
 ### 3.1. 🔐 Trang Đăng nhập (login.png)
-<img width="974" height="451" alt="image" src="https://github.com/user-attachments/assets/7b1d9208-cf5f-49a0-8f35-5175ea6714ff" />
+![z7250166828522_5047a951dd32b285fb41192d7ff0fa22](https://github.com/user-attachments/assets/8168df48-d098-49fd-82b0-ef1d81815766)
+
 
 
 ### 3.2. 📊 Dashboard (dashboard.png)  
